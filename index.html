@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Login & Registration Form | Codehal</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/4025983fbe.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="form-wrapper sign-in">
+      <form action="">
+        <h2>Login</h2>
+
+        <div class="input-group">
+          <i class='bx bxs-user'></i>
+          <input type="text" required>
+          <label for="">Username</label>
+        </div>
+
+        <div class="input-group">
+          <span>
+            <i class="fa-solid fa-eye" aria-hidden="true" id="eye" onclick="toggle()"></i>
+            </span>
+          <input type="password" required>
+          <label for="">Password</label>
+        </div>
+
+        <div class="remember">
+          <label><input type="checkbox"> Remember me</label>
+        </div>
+
+        <div class="btn">
+          <button type="submit" onclick="openpopup()">Login</button>
+
+      </div>
+
+        <div class="signUp-link">
+          <p>Don't have an account? <a href="#" class="signUpBtn-link">Register</a></p>
+        </div>
+
+      </form>
+    </div>
+    
+    <div class="form-wrapper sign-up">
+      <form action="">
+        <h2>Register</h2>
+
+        <div class="input-group">
+          <i class='bx bxs-user'></i>
+          <input type="text" required>
+          <label for="">Username</label>
+        </div>
+
+        <div class="input-group">
+          <i class='bx bxs-envelope'></i>
+          <input type="email" required>
+          <label for="">Email</label>
+        </div>
+
+        <div class="input-group">
+          <span>
+            <i class="fa-solid fa-eye" aria-hidden="true" id="eye" onclick="toggle()"></i>
+            </span>
+          <input type="password" required>
+          <label for="">Password</label>
+        </div>
+
+        <div class="remember">
+          <label><input type="checkbox"> I agree to the terms & conditions</label>
+        </div>
+
+        <div class="btn">
+          <button type="submit" onclick="openpopup()">Create Account</button>
+
+      </div>
+
+        <div class="signUp-link">
+          <p>Already have an account? <a href="#" class="signInBtn-link">Sign In</a></p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <script>
+  var state= false;
+        function toggle(){
+          if(state){
+            document.getElementById("Password").setAttribute("type","password");
+            document.getElementById("eye").style.color='#5f5f5f';
+            state = false;
+          }
+          else{
+            document.getElementById("Password").setAttribute("type","text");
+            document.getElementById("eye").style.color='#222';
+            state = true;
+          }
+        }
+const signInBtnLink = document.querySelector('.signInBtn-link');
+const signUpBtnLink = document.querySelector('.signUpBtn-link');
+const wrapper = document.querySelector('.wrapper');
+signUpBtnLink.addEventListener('click', () => {
+    wrapper.classList.toggle('active');
+});
+signInBtnLink.addEventListener('click', () => {
+    wrapper.classList.toggle('active');
+});
+  </script>
+</body>
+</html>
